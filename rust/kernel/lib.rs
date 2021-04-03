@@ -17,7 +17,7 @@
     alloc_error_handler,
     const_fn,
     const_mut_refs,
-    try_reserve
+    try_reserve,
 )]
 #![deny(clippy::complexity)]
 #![deny(clippy::correctness)]
@@ -33,7 +33,8 @@ use core::panic::PanicInfo;
 
 mod allocator;
 
-#[doc(hidden)]
+//#[doc(hidden)]
+#[allow(warnings, unused, missing_docs)]
 pub mod bindings;
 
 pub mod buffer;
@@ -51,6 +52,8 @@ pub mod printk;
 pub mod random;
 mod static_assert;
 pub mod sync;
+pub mod time;
+pub mod timer;
 
 #[cfg(CONFIG_SYSCTL)]
 pub mod sysctl;

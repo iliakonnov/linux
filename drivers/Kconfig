@@ -1,6 +1,19 @@
 # SPDX-License-Identifier: GPL-2.0
 menu "Device Drivers"
 
+
+config RUST_TIMER_EXAMPLE
+	depends on RUST
+	tristate "Rust Timer Example"
+	default n
+	help
+	  This option builds an example of using kernel timers in Rust.
+
+	  To compile this as a module, choose M here:
+	  the module will be called rust_timer_example.
+
+	  If unsure, say N.
+
 # Keep I/O buses first
 
 source "drivers/amba/Kconfig"

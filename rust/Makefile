@@ -14,7 +14,7 @@ quiet_cmd_rustdoc = RUSTDOC $<
 	$(RUSTDOC) $(filter-out --emit=%, $(rustc_flags)) \
 		$(rustdoc_target_flags) -L $(objtree)/rust/ \
 		--output $(objtree)/rust/doc --crate-name $(subst rustdoc-,,$@) \
-		-Fmissing-docs @$(objtree)/include/generated/rustc_cfg $<
+		@$(objtree)/include/generated/rustc_cfg $<
 
 rustdoc: rustdoc-module rustdoc-compiler_builtins rustdoc-kernel
 
